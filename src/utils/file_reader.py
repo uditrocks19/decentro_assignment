@@ -9,7 +9,7 @@ logger = get_logger()
 
 
 class FileReader:
-    SUPPORTED_TYPES = {"csv", "json"}
+    SUPPORTED_TYPES = {"csv", "json", "parquet"}
 
     def __init__(self, file_path: Union[str, Path], file_type: Optional[str] = None, **read_kwargs: Any):
         self.file_path = Path(file_path)
@@ -38,8 +38,10 @@ class FileReader:
         try:
             if self.file_type == "csv":
                 self._data = pd.read_csv(self.file_path, **self._read_kwargs)
-            else:
+            elif self.file_type == "json":
                 self._data = pd.read_json(self.file_path, **self._read_kwargs)
+            else:
+                self._data = pd.read_parquet(self.file_path, **self._read_kwargs)
 
         except Exception as exc:
             logger.exception("Unable to read %s file: %s", self.file_type, self.file_path)

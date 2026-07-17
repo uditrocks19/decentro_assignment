@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, Type
 
-from src.config.files_config import Settlements, Transactions, UPIResponses
+from src.config.file_config import Settlements, Transactions, UPIResponses
 from src.logger.log import get_logger
 from src.utils.file_reader import FileReader
 from src.utils.file_writer import FileWriter
