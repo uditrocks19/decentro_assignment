@@ -1,0 +1,93 @@
+[
+  {
+    "txn_id": "TXN001",
+    "response_code": "00",
+    "timestamp": "2026-07-05T09:15:24+05:30",
+    "error_message": null,
+    "upi_ref": "UPIREF100001",
+    "payer_vpa": "user1@paytm",
+    "payee_vpa": "merch101@upi"
+  },
+  {
+    "txn_id": "TXN002",
+    "response_code": "00",
+    "timestamp": "2026-07-05T09:18:47+05:30",
+    "error_message": null,
+    "upi_ref": null,
+    "payer_vpa": null,
+    "payee_vpa": null,
+    "note": "card transaction, UPI log not applicable"
+  },
+  {
+    "txn_id": "TXN003",
+    "response_code": "05",
+    "timestamp": "2026-07-05T09:22:12+05:30",
+    "error_message": "Insufficient funds",
+    "upi_ref": null,
+    "payer_vpa": "user2@phonepe",
+    "payee_vpa": "merch101@upi"
+  },
+  {
+    "txn_id": "TXN005",
+    "response_code": "00",
+    "timestamp": "2026-07-05T10:13:01+05:30",
+    "error_message": null,
+    "upi_ref": "UPIREF100005",
+    "payer_vpa": "user3@gpay",
+    "payee_vpa": "merch104@upi"
+  },
+  {
+    "txn_id": "TXN007",
+    "response_code": "00",
+    "timestamp": "2026-07-05T11:02:46+05:30",
+    "error_message": null,
+    "upi_ref": "UPIREF100007",
+    "payer_vpa": "user4@paytm",
+    "payee_vpa": "merch105@upi"
+  },
+  {
+    "txn_id": "TXN008",
+    "response_code": "99",
+    "timestamp": "2026-07-05T11:15:09+05:30",
+    "error_message": "Timeout at issuer",
+    "upi_ref": null,
+    "payer_vpa": "user5@phonepe",
+    "payee_vpa": "merch101@upi"
+  },
+  {
+    "txn_id": "TXN009",
+    "response_code": "05",
+    "timestamp": "2026-07-05T11:30:57+05:30",
+    "error_message": "Insufficient funds",
+    "upi_ref": null,
+    "payer_vpa": "user6@gpay",
+    "payee_vpa": "merch103@upi"
+  },
+  {
+    "txn_id": "TXN011",
+    "response_code": "00",
+    "timestamp": "2026-07-05T12:18:35+05:30",
+    "error_message": null,
+    "upi_ref": "UPIREF100011",
+    "payer_vpa": "user7@paytm",
+    "payee_vpa": "merch104@upi"
+  },
+  {
+    "txn_id": "TXN013",
+    "response_code": "00",
+    "timestamp": "2026-07-05T13:02:50+05:30",
+    "error_message": null,
+    "upi_ref": "UPIREF100013",
+    "payer_vpa": "user8@phonepe",
+    "payee_vpa": "merch107@upi"
+  },
+  {
+    "txn_id": "TXN015",
+    "response_code": "00",
+    "timestamp": "2026-07-05T13:55:44+05:30",
+    "error_message": null,
+    "upi_ref": "UPIREF100015",
+    "payer_vpa": "user9@gpay",
+    "payee_vpa": "merch101@upi"
+  }
+]

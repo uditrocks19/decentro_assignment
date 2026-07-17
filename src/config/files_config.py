@@ -1,15 +1,20 @@
 from pathlib import Path
 from enum import Enum
 
-
-class FileConfig(str, Enum):
+class Transactions(str, Enum):
     """Simple file and directory constants."""
+    SRC_PATH = "src/src_files/transactions.csv"
+    TGT_PATH = "src/bronze/"
+    FILE_TYPE = "csv"
 
-    BANK_RETURNS_CSV = "bank_returns.csv"
-    SOURCE_DIR = "source_dir"
-    TARGET_DIR = "target_dir"
-    APP_LOG = "app.log"
+class Settlements(str, Enum):
+    """Simple file and directory constants."""
+    SRC_PATH = "src/src_files/settlements.csv"
+    TGT_PATH = "src/bronze/"
+    FILE_TYPE = "csv"
 
-    @property
-    def file_type(self) -> str:
-        return Path(self.value).suffix.lstrip(".").lower()
+class UPIResponses(str, Enum):
+    """Simple file and directory constants."""
+    SRC_PATH = "src/src_files/upi_responses.json"
+    TGT_PATH = "src/bronze/"
+    FILE_TYPE = "json"
