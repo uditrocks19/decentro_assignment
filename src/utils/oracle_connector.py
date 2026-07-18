@@ -48,7 +48,7 @@ class OracleConnector:
         return oracledb.makedsn(self.host, self.port, service_name=self.service_name)
 
     def connect(self) -> oracledb.Connection:
-        if self._connection is not None and self._connection.closed == 0:
+        if self._connection is not None:
             return self._connection
 
         self._connection = oracledb.connect(
@@ -59,8 +59,15 @@ class OracleConnector:
         return self._connection
 
     def close(self) -> None:
-        if self._connection is not None and self._connection.closed == 0:
+        if self._connection is None:
+            return
+
+        try:
             self._connection.close()
+        except oracledb.InterfaceError:
+            # Connection may already be closed or not connected.
+            pass
+        finally:
             self._connection = None
 
     def write_dataframe(
@@ -94,8 +101,18 @@ class OracleConnector:
                 for row in df.itertuples(index=False, name=None)]
 
         cursor.executemany(insert_sql, rows, batcherrors=True)
+        batch_errors = cursor.getbatcherrors()
+        if batch_errors:
+            error_messages = "; ".join(
+                f"row {err.offset}: {err.message}" for err in batch_errors
+            )
+            cursor.close()
+            raise RuntimeError(f"Batch insert errors: {error_messages}")
+
         conn.commit()
         inserted = cursor.rowcount
+        if inserted <= 0:
+            inserted = len(rows)
         cursor.close()
         return inserted
 

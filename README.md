@@ -112,3 +112,7 @@ print(df)
 
 - If `python -m src.main` fails with module import errors, make sure you run it from the repository root (`c:\Users\acer\Udit\decentro_project`).
 - Use the virtual environment activation command before running the pipeline.
+
+
+# Attached photo for the data laoded into the warehouse
+![alt text](image.png)
